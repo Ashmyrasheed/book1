@@ -61,16 +61,7 @@ while True:
     elif(choice==3):
 
         print('search book')
-       
-        title = input('enter the title')
-
-        sql = 'SELECT `id`,`empcode`,`empname`,`designation`,`salary`,`companyname`,`phno`,`emailid`,`password` FROM `employees` WHERE `empcode` = '+empcode
-
-        mycursor.execute(sql)
-
-        result = mycursor.fetchall()
-
-        print(result)
+        
 
     elif(choice==4):
 
