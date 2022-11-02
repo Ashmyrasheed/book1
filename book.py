@@ -62,6 +62,17 @@ while True:
 
         print('search book')
         
+        title = input('enter the title')
+        
+
+        sql = "SELECT * FROM `books` WHERE `title` = '"+title+"'"
+
+        mycursor.execute(sql)
+
+        result = mycursor.fetchall()
+
+        print(result)
+
 
     elif(choice==4):
 
