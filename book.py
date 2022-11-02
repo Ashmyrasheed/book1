@@ -16,8 +16,9 @@ while True:
 
     print("5 delete a book")
     print('6total amount of book')
+    print('7 displays Total number of books for each category')
 
-    print("7 exit")
+    print("8 exit")
     
     choice = int(input('enter an option:'))
 
@@ -128,6 +129,21 @@ while True:
 
             print(i)
             
+    elif(choice == 7):
+
+        print('displays Total number of books for each category')
+
+        
+        
+        sql = 'SELECT COUNT(*) AS total_book_per_category,`category` FROM `books` GROUP BY `category`'
+
+        mycursor.execute(sql)
+
+        result = mycursor.fetchall()
+
+        for i in result:
+
+            print(i)
 
         break
     
