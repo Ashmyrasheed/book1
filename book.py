@@ -15,8 +15,9 @@ while True:
     print("4 update the book")    
 
     print("5 delete a book")
+    print('6total amount of book')
 
-    print("6 exit")
+    print("7 exit")
     
     choice = int(input('enter an option:'))
 
@@ -114,5 +115,19 @@ while True:
         print("data deleted succesfully")
 
     elif(choice==6):
+        
+        print('total amount of book')
+        
+        
+        sql = 'SELECT i.`userid`, i.`bookid`, i.`issuedate`, i.`returndate`,DATEDIFF(i.`returndate`,i.issuedate) AS datediff,DATEDIFF(i.`returndate`,i.issuedate)*b.`charge per day` AS amount FROM `issuebook` i JOIN books b ON i.bookid=b.id'
+        mycursor.execute(sql)
+
+        result = mycursor.fetchall()
+
+        for i in result:
+
+            print(i)
+            
 
         break
+    
