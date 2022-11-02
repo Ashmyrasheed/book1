@@ -49,12 +49,28 @@ while True:
 
         mydb.commit()
     elif(choice==2):
+        
+        sql = 'SELECT * FROM `books`'
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        for i in result:
+            print(i)
 
         print('view book')
 
     elif(choice==3):
 
         print('search book')
+       
+        title = input('enter the title')
+
+        sql = 'SELECT `id`,`empcode`,`empname`,`designation`,`salary`,`companyname`,`phno`,`emailid`,`password` FROM `employees` WHERE `empcode` = '+empcode
+
+        mycursor.execute(sql)
+
+        result = mycursor.fetchall()
+
+        print(result)
 
     elif(choice==4):
 
