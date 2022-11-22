@@ -18,6 +18,7 @@ while True:
     print("6total amount of book")
     print("7 displays Total number of books for each category")
     print("8 Displays the character which you needed ")
+    print("8 indidual book  ")
 
     print("9 exit")
     
